@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #07090e;
+    color: #f1f5f9;
+    overflow-x: hidden;
+  }
+
+  /* Custom sleek scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(7, 9, 14, 0.8);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 240, 255, 0.4);
+  }
+}
+
+@layer components {
+  /* Apple Liquid Glass base */
+  .liquid-glass {
+    @apply backdrop-blur-xl bg-[#0e131f]/60 border border-white/[0.08] shadow-glass relative;
+  }
+
+  .liquid-glass-card {
+    @apply backdrop-blur-xl bg-[#0d121c]/70 border border-white/[0.09] shadow-glass transition-all duration-300 hover:border-white/[0.22] hover:bg-[#111724]/80 hover:shadow-glass-hover;
+  }
+
+  .liquid-glass-nav {
+    @apply backdrop-blur-2xl bg-[#07090e]/75 border-b border-white/[0.08] shadow-glass;
+  }
+
+  .liquid-glass-input {
+    @apply backdrop-blur-md bg-white/[0.04] border border-white/[0.12] rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-cyan/70 focus:ring-1 focus:ring-brand-cyan/70 transition-all duration-200;
+  }
+
+  /* Specular reflection border */
+  .specular-border {
+    position: relative;
+  }
+  .specular-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+    pointer-events: none;
+  }
+
+  /* Gradient text */
+  .gradient-text-cyan {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-cyan via-teal-300 to-blue-500;
+  }
+
+  .gradient-text-purple {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-brand-cyan;
+  }
+
+  .gradient-text-apple {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-slate-100 to-slate-400;
+  }
+
+  /* Button styles */
+  .btn-liquid-primary {
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-slate-950 bg-gradient-to-r from-brand-cyan via-teal-200 to-cyan-400 shadow-glow-cyan hover:shadow-[0_0_35px_rgba(0,240,255,0.6)] active:scale-[0.98] transition-all duration-300 font-semibold;
+  }
+
+  .btn-liquid-secondary {
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white backdrop-blur-lg bg-white/[0.06] border border-white/[0.15] hover:bg-white/[0.12] hover:border-white/[0.3] active:scale-[0.98] transition-all duration-200;
+  }
+
+  .btn-liquid-purple {
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 shadow-glow-purple hover:shadow-[0_0_35px_rgba(157,78,221,0.6)] active:scale-[0.98] transition-all duration-300 font-semibold;
+  }
+}
+
+/* Ambient glow blobs */
+.ambient-glow-cyan {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.ambient-glow-purple {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(157, 78, 221, 0.14) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.ambient-glow-blue {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(90px);
+  pointer-events: none;
+}
