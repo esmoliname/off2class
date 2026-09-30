@@ -1,8 +1,8 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import CourseCatalog from '../components/CourseCatalog';
-import { ArrowRight, Calendar, Sparkles, CheckCircle, ShieldCheck, Cpu, Globe2, MessageSquare, ExternalLink } from 'lucide-react';
-import { OFF2CLASS_WHITELABEL_URL } from '../utils/constants';
+import BridgeCTA from '../components/shared/BridgeCTA';
+import { ArrowRight, Calendar, Sparkles, CheckCircle, ShieldCheck, Cpu, Globe2, MessageSquare } from 'lucide-react';
 
 export default function LandingPage({
   onOpenCalendly,
@@ -123,15 +123,7 @@ export default function LandingPage({
                   </div>
                 </div>
 
-                <a
-                  href={OFF2CLASS_WHITELABEL_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-liquid-primary !w-full !py-2.5 text-xs"
-                >
-                  <span>Probar Conexión Off2Class Whitelabel</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+                <BridgeCTA variant="inline" source="landing_methodology" />
               </div>
             </div>
           </div>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  ExternalLink,
   Sparkles,
   Flame,
   Award,
@@ -19,8 +18,8 @@ import {
   HelpCircle,
   Info
 } from 'lucide-react';
+import BridgeCTA, { openBridge } from '../components/shared/BridgeCTA';
 import {
-  OFF2CLASS_WHITELABEL_URL,
   AI_RECOMMENDATIONS,
   VERNEVAL_CHANNELS,
   INITIAL_VERNEVAL_MESSAGES
@@ -83,7 +82,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
     setCompletedLessons((prev) => [...prev, rec.id]);
     setAlertNotice(`Conectando con Off2Class para la lección: "${rec.title}" (Código: ${rec.off2classLessonCode || 'AI-SYNC'})`);
     setTimeout(() => {
-      window.open(OFF2CLASS_WHITELABEL_URL, '_blank', 'noopener,noreferrer');
+      openBridge({ lessonCode: rec.off2classLessonCode, source: 'ai_recommendation' });
       setAlertNotice(null);
     }, 1500);
   };
@@ -205,20 +204,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
           </div>
 
           {/* MAIN PROMINENT BUTTON */}
-          <div className="shrink-0 flex flex-col items-center sm:items-start lg:items-end gap-2">
-            <a
-              href={OFF2CLASS_WHITELABEL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-liquid-primary !py-4 !px-8 text-base font-bold flex items-center gap-3 shadow-[0_0_35px_rgba(0,240,255,0.5)] group/btn hover:scale-[1.02] transition-transform"
-            >
-              <span>Acceder a mi Aula Virtual / Off2Class</span>
-              <ExternalLink className="w-5 h-5 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-            </a>
-            <span className="text-[11px] text-slate-300 font-mono">
-              Destino: {OFF2CLASS_WHITELABEL_URL}
-            </span>
-          </div>
+          <BridgeCTA variant="primary" source="dashboard_bridge" showDestination />
         </div>
       </div>
 

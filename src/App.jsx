@@ -6,12 +6,12 @@ import AuthModal from './components/AuthModal';
 import CalendlyModal from './components/CalendlyModal';
 import Footer from './components/Footer';
 import PlacementTestModal from './features/placement-test/PlacementTestModal';
-import { MOCK_STUDENT } from './utils/constants';
+import { useSession } from './features/auth/useSession';
 
 export default function App() {
   const [currentView, setCurrentView] = useState('landing'); // 'landing' | 'dashboard'
-  const [isAuthenticated, setIsAuthenticated] = useState(true); // Default logged in for rich initial demo
-  const [user, setUser] = useState(MOCK_STUDENT);
+  // Session-backed auth: starts logged out unless a persisted session exists
+  const { user, isAuthenticated, login, logout } = useSession();
 
   // Modals state
   const [isAuthOpen, setIsAuthOpen] = useState(false);
@@ -21,14 +21,13 @@ export default function App() {
   const [prefillEmail, setPrefillEmail] = useState('');
 
   const handleLoginSuccess = (userData) => {
-    setUser(userData);
-    setIsAuthenticated(true);
+    login(userData);
+    setIsAuthOpen(false);
     setCurrentView('dashboard');
   };
 
   const handleLogout = () => {
-    setIsAuthenticated(false);
-    setUser(null);
+    logout();
     setCurrentView('landing');
   };
 
@@ -52,7 +51,7 @@ export default function App() {
 
       {/* Main Content Area */}
       <div className="flex-1">
-        {currentView === 'landing' ? (
+        {currentView === 'landing' || !user ? (
           <LandingPage
             onOpenCalendly={() => setIsCalendlyOpen(true)}
             onOpenAuth={() => setIsAuthOpen(true)}
@@ -66,10 +65,7 @@ export default function App() {
             }}
           />
         ) : (
-          <StudentDashboard
-            student={user || MOCK_STUDENT}
-            onOpenCalendly={() => setIsCalendlyOpen(true)}
-          />
+          <StudentDashboard student={user} onOpenCalendly={() => setIsCalendlyOpen(true)} />
         )}
       </div>
 

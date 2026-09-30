@@ -1,6 +1,5 @@
 import React from 'react';
 import { ArrowRight, Calendar, Sparkles, CheckCircle2, ShieldCheck, Zap, Laptop, BookOpen } from 'lucide-react';
-import { OFF2CLASS_WHITELABEL_URL } from '../utils/constants';
 
 export default function Hero({ onOpenCalendly, onStartPlacementTest, onNavigateToCourses }) {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Sparkles, Shield, Heart, ExternalLink, Globe } from 'lucide-react';
-import { OFF2CLASS_WHITELABEL_URL } from '../utils/constants';
+import { Sparkles, Shield, Heart, Globe } from 'lucide-react';
+import BridgeCTA from './shared/BridgeCTA';
 
 export default function Footer({ onOpenCalendly, onStartPlacementTest }) {
   return (
@@ -52,15 +52,7 @@ export default function Footer({ onOpenCalendly, onStartPlacementTest }) {
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-4">Ecosistema</h4>
             <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
-                <a
-                  href={OFF2CLASS_WHITELABEL_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-brand-cyan flex items-center gap-1 transition-colors"
-                >
-                  <span>Aula Virtual Whitelabel</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                <BridgeCTA variant="bare" source="footer" />
               </li>
               <li>
                 <button onClick={onOpenCalendly} className="hover:text-brand-cyan transition-colors">

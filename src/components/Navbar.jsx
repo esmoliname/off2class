@@ -1,6 +1,6 @@
 import React from 'react';
-import { Sparkles, Calendar, User, LogOut, ExternalLink, ShieldCheck, ChevronRight } from 'lucide-react';
-import { OFF2CLASS_WHITELABEL_URL } from '../utils/constants';
+import { Sparkles, Calendar, User, LogOut, ShieldCheck, ChevronRight } from 'lucide-react';
+import BridgeCTA from './shared/BridgeCTA';
 
 export default function Navbar({
   currentView,
@@ -86,16 +86,7 @@ export default function Navbar({
         {/* Actions / Session */}
         <div className="flex items-center gap-2.5">
           {/* Quick Bridge button to Off2Class whitelabel */}
-          <a
-            href={OFF2CLASS_WHITELABEL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Ir directo al portal Off2Class Whitelabel"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-white/[0.04] border border-white/[0.1] hover:border-brand-cyan/50 hover:text-brand-cyan transition-all"
-          >
-            <span>Aula Virtual</span>
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
+          <BridgeCTA variant="nav" source="navbar" />
 
           {isAuthenticated ? (
             <div className="flex items-center gap-2">
