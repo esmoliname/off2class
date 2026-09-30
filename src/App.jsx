@@ -32,7 +32,18 @@ export default function App() {
   };
 
   const openAuthWithPrefill = (email) => {
-    if (email) setPrefillEmail(email);
+    // Returning students skip the auth wall and land straight in the campus.
+    if (isAuthenticated) {
+      setCurrentView('dashboard');
+      return;
+    }
+    setPrefillEmail(email || '');
+    setIsAuthOpen(true);
+  };
+
+  // Plain "Acceso Alumnos" must not inherit a stale prefill from a prior test run
+  const openAuth = () => {
+    setPrefillEmail('');
     setIsAuthOpen(true);
   };
 
@@ -44,7 +55,7 @@ export default function App() {
         setCurrentView={setCurrentView}
         isAuthenticated={isAuthenticated}
         user={user}
-        onOpenAuth={() => setIsAuthOpen(true)}
+        onOpenAuth={openAuth}
         onOpenCalendly={() => setIsCalendlyOpen(true)}
         onLogout={handleLogout}
       />
@@ -54,11 +65,11 @@ export default function App() {
         {currentView === 'landing' || !user ? (
           <LandingPage
             onOpenCalendly={() => setIsCalendlyOpen(true)}
-            onOpenAuth={() => setIsAuthOpen(true)}
+            onOpenAuth={openAuth}
             onStartPlacementTest={() => setIsPlacementTestOpen(true)}
             onSelectCourse={(course) => {
               if (!isAuthenticated) {
-                setIsAuthOpen(true);
+                openAuth();
               } else {
                 setCurrentView('dashboard');
               }
