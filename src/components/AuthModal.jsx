@@ -1,15 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { X, Lock, Mail, User, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
 import { MOCK_STUDENT } from '../utils/constants';
 
-export default function AuthModal({ isOpen, onClose, onLoginSuccess }) {
+export default function AuthModal({ isOpen, onClose, onLoginSuccess, prefillEmail }) {
   const [mode, setMode] = useState('login'); // 'login' | 'register'
   const [formData, setFormData] = useState({
     name: 'Sofía Valenzuela',
-    email: 'sofia.valenzuela@alumnos.edu',
+    email: prefillEmail || 'sofia.valenzuela@alumnos.edu',
     password: 'password123',
     levelGoal: 'B2'
   });
+
+  // Carry the lead email captured by the placement test into the form
+  useEffect(() => {
+    if (isOpen && prefillEmail) {
+      setMode('register');
+      setFormData((prev) => ({ ...prev, email: prefillEmail }));
+    }
+  }, [isOpen, prefillEmail]);
 
   if (!isOpen) return null;
 
