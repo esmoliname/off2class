@@ -65,7 +65,7 @@ export default function CalendlyModal({ isOpen, onClose }) {
               </div>
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white">Agendar Asesoría Pedagógica</h3>
-                <p className="text-xs text-slate-400">Sincronización directa vía Calendly & Coordinación Académica</p>
+                <p className="text-xs text-slate-300">Sincronización directa vía Calendly & Coordinación Académica</p>
               </div>
             </div>
 
@@ -92,7 +92,7 @@ export default function CalendlyModal({ isOpen, onClose }) {
                       }`}
                     >
                       <div className="font-semibold">{topic.label}</div>
-                      <div className="text-[11px] text-slate-400 mt-0.5">{topic.desc}</div>
+                      <div className="text-[11px] text-slate-300 mt-0.5">{topic.desc}</div>
                     </button>
                   ))}
                 </div>
@@ -142,7 +142,7 @@ export default function CalendlyModal({ isOpen, onClose }) {
               {/* Student info inputs */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 <div>
-                  <label className="block text-[11px] text-slate-400 mb-1">Nombre completo</label>
+                  <label className="block text-[11px] text-slate-300 mb-1">Nombre completo</label>
                   <input
                     type="text"
                     required
@@ -153,7 +153,7 @@ export default function CalendlyModal({ isOpen, onClose }) {
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] text-slate-400 mb-1">Correo electrónico</label>
+                  <label className="block text-[11px] text-slate-300 mb-1">Correo electrónico</label>
                   <input
                     type="email"
                     required
@@ -171,7 +171,7 @@ export default function CalendlyModal({ isOpen, onClose }) {
                   href={CALENDLY_BOOKING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-slate-400 hover:text-brand-cyan flex items-center gap-1 transition-colors"
+                  className="text-xs text-slate-300 hover:text-brand-cyan flex items-center gap-1 transition-colors"
                 >
                   <span>Abrir en Calendly web externo</span>
                   <ExternalLink className="w-3.5 h-3.5" />

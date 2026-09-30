@@ -62,7 +62,7 @@ export default function CourseCatalog({ onSelectCourse, onOpenCalendly, onStartP
                       {course.badge}
                     </span>
 
-                    <div className="flex items-center gap-1.5 text-xs text-slate-400 bg-white/[0.04] px-2.5 py-1 rounded-full border border-white/[0.06]">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-300 bg-white/[0.04] px-2.5 py-1 rounded-full border border-white/[0.06]">
                       <Clock className="w-3.5 h-3.5" />
                       <span>{course.duration}</span>
                     </div>
@@ -77,7 +77,7 @@ export default function CourseCatalog({ onSelectCourse, onOpenCalendly, onStartP
                       <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-brand-cyan transition-colors">
                         {course.title}
                       </h3>
-                      <p className="text-xs text-slate-400 font-medium mt-0.5">{course.level}</p>
+                      <p className="text-xs text-slate-300 font-medium mt-0.5">{course.level}</p>
                     </div>
                   </div>
 

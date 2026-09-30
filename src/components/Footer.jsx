@@ -17,7 +17,7 @@ export default function Footer({ onOpenCalendly, onStartPlacementTest }) {
               </div>
               <span className="font-bold text-white text-base tracking-tight">Off2Class University</span>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed mb-4">
+            <p className="text-xs text-slate-300 leading-relaxed mb-4">
               Entorno pedagógico de alta exigencia para estudiantes universitarios y profesionales. Plataforma oficial de marca blanca Off2Class integrada con IA.
             </p>
             <div className="flex items-center gap-2 text-[11px] text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full w-fit border border-emerald-500/20">
@@ -29,7 +29,7 @@ export default function Footer({ onOpenCalendly, onStartPlacementTest }) {
           {/* Quick links */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-4">Programas</h4>
-            <ul className="space-y-2.5 text-xs text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
                 <button onClick={onStartPlacementTest} className="hover:text-brand-cyan transition-colors">
                   Test de Ubicación CEFR Gratis
@@ -50,7 +50,7 @@ export default function Footer({ onOpenCalendly, onStartPlacementTest }) {
           {/* Whitelabel & Tech */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-4">Ecosistema</h4>
-            <ul className="space-y-2.5 text-xs text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
                 <a
                   href={OFF2CLASS_WHITELABEL_URL}
@@ -79,10 +79,10 @@ export default function Footer({ onOpenCalendly, onStartPlacementTest }) {
           {/* Standards & Compliance */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-4">Acreditación</h4>
-            <p className="text-xs text-slate-400 leading-relaxed mb-3">
+            <p className="text-xs text-slate-300 leading-relaxed mb-3">
               Currículum alineado con el Common European Framework of Reference for Languages (CEFR).
             </p>
-            <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-[11px] text-slate-400 flex items-center gap-2">
+            <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08] text-[11px] text-slate-300 flex items-center gap-2">
               <Shield className="w-4 h-4 text-brand-cyan shrink-0" />
               <span>Garantía de Privacidad y Protección de Datos Académicos</span>
             </div>

@@ -23,18 +23,31 @@ export default {
           indigo: '#5e60ce',
           emerald: '#10b981',
           amber: '#f59e0b',
-        }
+        },
+        // Liquid Glass design tokens (see .glass-grain in src/index.css)
+        glass: {
+          fill: 'rgba(255, 255, 255, 0.05)',
+          border: 'rgba(255, 255, 255, 0.08)',
+        },
       },
       fontFamily: {
+        // Single source of truth: SF on Apple devices, Inter as cross-platform webfont.
         sans: [
           '-apple-system',
           'BlinkMacSystemFont',
           '"SF Pro Display"',
           '"SF Pro Text"',
           '"Segoe UI"',
-          'Roboto',
           'Inter',
+          'Roboto',
           'sans-serif'
+        ],
+        mono: [
+          '"JetBrains Mono"',
+          'ui-monospace',
+          'SFMono-Regular',
+          'Menlo',
+          'monospace'
         ],
       },
       boxShadow: {
@@ -71,5 +84,5 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 }

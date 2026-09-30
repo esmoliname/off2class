@@ -58,7 +58,7 @@ export default function Hero({ onOpenCalendly, onStartPlacementTest, onNavigateT
                 <span className="text-xs font-semibold uppercase tracking-wider">Algoritmo</span>
               </div>
               <div className="text-2xl font-bold text-white mb-0.5">25 Min</div>
-              <div className="text-xs text-slate-400">Diagnóstico CEFR en tiempo real</div>
+              <div className="text-xs text-slate-300">Diagnóstico CEFR en tiempo real</div>
             </div>
 
             <div className="liquid-glass-card rounded-2xl p-4 text-left border-white/10 specular-border">
@@ -67,7 +67,7 @@ export default function Hero({ onOpenCalendly, onStartPlacementTest, onNavigateT
                 <span className="text-xs font-semibold uppercase tracking-wider">Whitelabel</span>
               </div>
               <div className="text-2xl font-bold text-white mb-0.5">Off2Class</div>
-              <div className="text-xs text-slate-400">Aula virtual integrada sin fricción</div>
+              <div className="text-xs text-slate-300">Aula virtual integrada sin fricción</div>
             </div>
 
             <div className="liquid-glass-card rounded-2xl p-4 text-left border-white/10 specular-border">
@@ -76,7 +76,7 @@ export default function Hero({ onOpenCalendly, onStartPlacementTest, onNavigateT
                 <span className="text-xs font-semibold uppercase tracking-wider">Efectividad</span>
               </div>
               <div className="text-2xl font-bold text-white mb-0.5">98.4%</div>
-              <div className="text-xs text-slate-400">Aprobación en IELTS y TOEFL</div>
+              <div className="text-xs text-slate-300">Aprobación en IELTS y TOEFL</div>
             </div>
 
             <div className="liquid-glass-card rounded-2xl p-4 text-left border-white/10 specular-border">
@@ -85,7 +85,7 @@ export default function Hero({ onOpenCalendly, onStartPlacementTest, onNavigateT
                 <span className="text-xs font-semibold uppercase tracking-wider">Contenido</span>
               </div>
               <div className="text-2xl font-bold text-white mb-0.5">+450</div>
-              <div className="text-xs text-slate-400">Lecciones interactivas modulares</div>
+              <div className="text-xs text-slate-300">Lecciones interactivas modulares</div>
             </div>
           </div>
         </div>

@@ -51,7 +51,7 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess }) {
           <h3 className="text-2xl font-bold text-white">
             {mode === 'login' ? 'Portal del Estudiante' : 'Crear Cuenta de Alumno'}
           </h3>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-300 mt-1">
             {mode === 'login'
               ? 'Accedé a tus métricas de progreso, IA y aula Off2Class'
               : 'Registrate para iniciar tu prueba diagnóstica'}
@@ -66,7 +66,7 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             className={`flex-1 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               mode === 'login'
                 ? 'bg-white/15 text-white shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-300 hover:text-white'
             }`}
           >
             Iniciar Sesión
@@ -77,7 +77,7 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             className={`flex-1 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               mode === 'register'
                 ? 'bg-white/15 text-white shadow-sm'
-                : 'text-slate-400 hover:text-white'
+                : 'text-slate-300 hover:text-white'
             }`}
           >
             Registrarse
@@ -143,7 +143,7 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess }) {
             <div className="flex items-center justify-between mb-1">
               <label className="block text-xs font-medium text-slate-300">Contraseña</label>
               {mode === 'login' && (
-                <span className="text-[11px] text-slate-400 hover:text-brand-cyan cursor-pointer">
+                <span className="text-[11px] text-slate-300 hover:text-brand-cyan cursor-pointer">
                   ¿Olvidaste tu contraseña?
                 </span>
               )}
@@ -169,7 +169,7 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess }) {
           </button>
         </form>
 
-        <div className="mt-5 text-center text-xs text-slate-400 flex items-center justify-center gap-1.5">
+        <div className="mt-5 text-center text-xs text-slate-300 flex items-center justify-center gap-1.5">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
           <span>Acceso seguro protegido por Off2Class SSO</span>
         </div>

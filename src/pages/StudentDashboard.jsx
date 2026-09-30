@@ -136,7 +136,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
                   {student.currentLevel}
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-400 font-medium">
+              <p className="text-xs sm:text-sm text-slate-300 font-medium">
                 {student.program} • ID: <span className="font-mono text-slate-300">{student.id}</span>
               </p>
             </div>
@@ -150,7 +150,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
               </div>
               <div>
                 <div className="font-bold text-white text-sm">{student.streakDays} Días</div>
-                <div className="text-[10px] text-slate-400">Racha de Estudio</div>
+                <div className="text-[10px] text-slate-300">Racha de Estudio</div>
               </div>
             </div>
 
@@ -160,7 +160,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
               </div>
               <div>
                 <div className="font-bold text-white text-sm">{student.stats.avgAccuracy}</div>
-                <div className="text-[10px] text-slate-400">Precisión Global</div>
+                <div className="text-[10px] text-slate-300">Precisión Global</div>
               </div>
             </div>
 
@@ -192,7 +192,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
               Ingresá de inmediato a tu panel oficial de <span className="text-brand-cyan font-semibold">Off2Class</span> con tu sesión universitaria activa. Accedé a diapositivas en vivo, tareas asignadas por tus profesores y banco de ejercicios sin necesidad de volver a iniciar sesión.
             </p>
 
-            <div className="flex items-center gap-4 text-xs text-slate-400">
+            <div className="flex items-center gap-4 text-xs text-slate-300">
               <div className="flex items-center gap-1.5">
                 <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Subdominio Autorizado</span>
@@ -215,7 +215,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
               <span>Acceder a mi Aula Virtual / Off2Class</span>
               <ExternalLink className="w-5 h-5 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
             </a>
-            <span className="text-[11px] text-slate-400 font-mono">
+            <span className="text-[11px] text-slate-300 font-mono">
               Destino: {OFF2CLASS_WHITELABEL_URL}
             </span>
           </div>
@@ -229,7 +229,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
           className={`px-5 py-2 rounded-xl text-xs font-semibold transition-all ${
             activeTab === 'overview'
               ? 'bg-white/10 text-white border border-white/15 shadow-sm'
-              : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
+              : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
           }`}
         >
           Resumen & Recomendaciones IA
@@ -239,7 +239,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
           className={`px-5 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
             activeTab === 'verneval'
               ? 'bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40 shadow-glow-cyan'
-              : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
+              : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
           }`}
         >
           <MessageSquare className="w-3.5 h-3.5" />
@@ -275,11 +275,11 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
 
               <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/[0.08]">
                 <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                  <div className="text-[11px] text-slate-400">Lecciones Hechas</div>
+                  <div className="text-[11px] text-slate-300">Lecciones Hechas</div>
                   <div className="text-lg font-bold text-white mt-0.5">{student.stats.lessonsCompleted}</div>
                 </div>
                 <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
-                  <div className="text-[11px] text-slate-400">Horas Totales</div>
+                  <div className="text-[11px] text-slate-300">Horas Totales</div>
                   <div className="text-lg font-bold text-white mt-0.5">{student.stats.hoursLogged} h</div>
                 </div>
               </div>
@@ -327,7 +327,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Recomendador Adaptativo con IA</h3>
-                    <p className="text-xs text-slate-400">Rutas de aprendizaje personalizadas a partir de tus errores y fortalezas</p>
+                    <p className="text-xs text-slate-300">Rutas de aprendizaje personalizadas a partir de tus errores y fortalezas</p>
                   </div>
                 </div>
 
@@ -356,7 +356,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
                             <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30">
                               {rec.skill}
                             </span>
-                            <span className="text-[10px] font-mono text-slate-400 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">
+                            <span className="text-[10px] font-mono text-slate-300 bg-white/[0.04] px-2 py-0.5 rounded border border-white/10">
                               Nivel {rec.difficulty}
                             </span>
                             <span className="text-[10px] text-emerald-400 font-medium bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
@@ -368,11 +368,11 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
                             {rec.title}
                           </h4>
 
-                          <p className="text-xs text-slate-400 leading-relaxed">
+                          <p className="text-xs text-slate-300 leading-relaxed">
                             {rec.reason}
                           </p>
 
-                          <div className="flex items-center gap-4 text-[11px] text-slate-400 pt-1">
+                          <div className="flex items-center gap-4 text-[11px] text-slate-300 pt-1">
                             <span className="flex items-center gap-1">
                               <Clock className="w-3 h-3 text-slate-500" />
                               {rec.estimatedTime}
@@ -434,7 +434,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
                     className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-medium transition-all text-left ${
                       isActive
                         ? 'bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40 shadow-glow-cyan'
-                        : 'text-slate-400 hover:text-white hover:bg-white/[0.04]'
+                        : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
                     }`}
                   >
                     <IconComponent className="w-4 h-4 shrink-0" />
@@ -449,7 +449,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>IA Feedback Activo</span>
               </div>
-              <p className="text-[11px] text-slate-400 leading-relaxed">
+              <p className="text-[11px] text-slate-300 leading-relaxed">
                 Tus intervenciones en el canal de gramática y speaking son evaluadas por el tutor pedagógico inteligente.
               </p>
             </div>
@@ -463,12 +463,12 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
                 <h4 className="text-base font-bold text-white flex items-center gap-2">
                   <span>#{VERNEVAL_CHANNELS.find((c) => c.id === activeChannel)?.name}</span>
                 </h4>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs text-slate-300">
                   {VERNEVAL_CHANNELS.find((c) => c.id === activeChannel)?.label}
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 text-xs text-slate-400">
+              <div className="flex items-center gap-2 text-xs text-slate-300">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <span>18 estudiantes conectados</span>
               </div>
@@ -491,7 +491,7 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-xs font-bold text-white">{msg.sender}</span>
-                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/[0.06] text-slate-400 border border-white/10">
+                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/[0.06] text-slate-300 border border-white/10">
                           {msg.role}
                         </span>
                         <span className="text-[10px] text-slate-500">{msg.timestamp}</span>

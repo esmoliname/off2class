@@ -31,7 +31,7 @@ export default function Navbar({
                 PRO
               </span>
             </div>
-            <p className="text-[11px] text-slate-400 font-medium tracking-wide">University English Suite</p>
+            <p className="text-[11px] text-slate-300 font-medium tracking-wide">University English Suite</p>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ export default function Navbar({
             className={`px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
               currentView === 'landing'
                 ? 'bg-white/10 text-white shadow-sm border border-white/15'
-                : 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
+                : 'text-slate-300 hover:text-white hover:bg-white/[0.05]'
             }`}
           >
             Inicio
@@ -58,13 +58,13 @@ export default function Navbar({
                 }, 100);
               }
             }}
-            className="px-4 py-1.5 rounded-full text-xs font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all"
+            className="px-4 py-1.5 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all"
           >
             Catálogo de Cursos
           </a>
           <button
             onClick={onOpenCalendly}
-            className="px-4 py-1.5 rounded-full text-xs font-medium text-slate-400 hover:text-white hover:bg-white/[0.05] transition-all flex items-center gap-1.5"
+            className="px-4 py-1.5 rounded-full text-xs font-medium text-slate-300 hover:text-white hover:bg-white/[0.05] transition-all flex items-center gap-1.5"
           >
             <Calendar className="w-3.5 h-3.5 text-brand-cyan" />
             Agendar Asesoría

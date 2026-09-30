@@ -132,7 +132,7 @@ export default function App() {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">Test de Ubicación Rápido CEFR</h3>
-                <p className="text-xs text-slate-400">Diagnóstico interactivo algorítmico Off2Class</p>
+                <p className="text-xs text-slate-300">Diagnóstico interactivo algorítmico Off2Class</p>
               </div>
             </div>
 
@@ -217,7 +217,7 @@ export default function App() {
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <h4 className="text-xl font-bold text-white mb-1">¡Diagnóstico Completado con Éxito!</h4>
-                <p className="text-xs text-slate-400 mb-6">Tu nivel estimado según la escala internacional CEFR:</p>
+                <p className="text-xs text-slate-300 mb-6">Tu nivel estimado según la escala internacional CEFR:</p>
 
                 <div className="p-5 rounded-2xl bg-white/[0.04] border border-brand-cyan/30 text-left mb-6 space-y-2">
                   <div className="flex justify-between items-center pb-2 border-b border-white/10">
@@ -228,7 +228,7 @@ export default function App() {
                     <span className="text-slate-400">Puntaje Global:</span>
                     <span className="text-emerald-400 font-bold">{placementResult.score}</span>
                   </div>
-                  <div className="text-xs text-slate-400 pt-1">
+                  <div className="text-xs text-slate-300 pt-1">
                     <strong className="text-white">Fortalezas:</strong> {placementResult.strengths}
                   </div>
                 </div>

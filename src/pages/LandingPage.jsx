@@ -55,7 +55,7 @@ export default function LandingPage({
                     </div>
                     <div>
                       <h4 className="text-sm font-semibold text-white">Aula Virtual Whitelabel sin intermediarios</h4>
-                      <p className="text-xs text-slate-400 mt-0.5">
+                      <p className="text-xs text-slate-300 mt-0.5">
                         Acceso con Single Sign-On directo a las lecciones interactivas, tareas y material oficial de Off2Class.
                       </p>
                     </div>
@@ -67,7 +67,7 @@ export default function LandingPage({
                     </div>
                     <div>
                       <h4 className="text-sm font-semibold text-white">Recomendador Inteligente de Lecciones</h4>
-                      <p className="text-xs text-slate-400 mt-0.5">
+                      <p className="text-xs text-slate-300 mt-0.5">
                         Algoritmos que analizan tu desempeño en tiempo real y sugieren los ejercicios específicos para desbloquear tu siguiente nivel CEFR.
                       </p>
                     </div>
@@ -79,7 +79,7 @@ export default function LandingPage({
                     </div>
                     <div>
                       <h4 className="text-sm font-semibold text-white">Comunidad Activa Verneval</h4>
-                      <p className="text-xs text-slate-400 mt-0.5">
+                      <p className="text-xs text-slate-300 mt-0.5">
                         Canales colaborativos de speaking, debate académico y resolución de dudas con profesores en vivo.
                       </p>
                     </div>
@@ -95,7 +95,7 @@ export default function LandingPage({
                     <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                     <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                   </div>
-                  <span className="text-[11px] font-mono text-slate-400">campus.off2class.whitelabel/bridge</span>
+                  <span className="text-[11px] font-mono text-slate-300">campus.off2class.whitelabel/bridge</span>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 mb-4">
