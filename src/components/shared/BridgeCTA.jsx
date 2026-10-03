@@ -1,7 +1,7 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { OFF2CLASS_WHITELABEL_URL } from '../../utils/constants';
-import { track } from '../../features/analytics/track';
+import { track } from '../../utils/track';
 
 /**
  * Build the whitelabel URL with lesson + attribution params.

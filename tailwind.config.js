@@ -42,6 +42,15 @@ export default {
           'Roboto',
           'sans-serif'
         ],
+        // Display / headings: geometric grotesk for optical hierarchy.
+        display: [
+          'Outfit',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"SF Pro Display"',
+          'Inter',
+          'sans-serif'
+        ],
         mono: [
           '"JetBrains Mono"',
           'ui-monospace',

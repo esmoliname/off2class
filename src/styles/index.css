@@ -14,7 +14,11 @@
     overflow-x: hidden;
   }
 
-  /* Custom sleek scrollbar */
+  h1, h2, h3, h4 {
+    font-family: theme('fontFamily.display');
+    letter-spacing: -0.02em;
+  }
+
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -32,12 +36,16 @@
 }
 
 @layer components {
-  /* Apple Liquid Glass base */
+  /* ------------------------------------------------------------------
+     Liquid Glass surface system
+  ------------------------------------------------------------------ */
   .liquid-glass {
+    isolation: isolate;
     @apply backdrop-blur-xl bg-[#0e131f]/60 border border-white/[0.08] shadow-glass relative;
   }
 
   .liquid-glass-card {
+    isolation: isolate;
     @apply relative backdrop-blur-xl bg-[#0d121c]/70 border border-white/[0.09] shadow-glass transition-all duration-300 hover:border-white/[0.22] hover:bg-[#111724]/80 hover:shadow-glass-hover;
   }
 
@@ -47,6 +55,21 @@
 
   .liquid-glass-input {
     @apply backdrop-blur-md bg-white/[0.04] border border-white/[0.12] rounded-xl px-4 py-2.5 text-white placeholder-slate-400 focus:outline-none focus:border-brand-cyan/70 focus:ring-1 focus:ring-brand-cyan/70 transition-all duration-200;
+  }
+
+  /* Floating control dock (FaceTime / Zoom style) */
+  .dock-glass {
+    isolation: isolate;
+    @apply backdrop-blur-2xl bg-[#0d121c]/80 border border-white/[0.12] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.9)] relative;
+  }
+
+  /* Bioluminescent frame for media containers (video / whiteboard) */
+  .panel-biolum {
+    @apply relative rounded-2xl border border-brand-cyan/25 bg-[#0a0e17]/80 backdrop-blur-xl shadow-[0_0_50px_-12px_rgba(0,240,255,0.35)] overflow-hidden;
+  }
+
+  .panel-biolum-purple {
+    @apply relative rounded-2xl border border-purple-400/25 bg-[#0a0e17]/80 backdrop-blur-xl shadow-[0_0_50px_-12px_rgba(157,78,221,0.35)] overflow-hidden;
   }
 
   /* Specular reflection border */
@@ -67,7 +90,8 @@
   /* Material grain: subtle noise so glass reads as frosted material, not flat plastic */
   .glass-grain::after,
   .liquid-glass::after,
-  .liquid-glass-card::after {
+  .liquid-glass-card::after,
+  .dock-glass::after {
     content: '';
     position: absolute;
     inset: 0;
@@ -76,6 +100,26 @@
     pointer-events: none;
     opacity: 0.035;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Interactive glow container for brand marks / logos */
+  .glass-glow {
+    isolation: isolate;
+    @apply relative transition-all duration-300;
+  }
+  .glass-glow::after {
+    content: '';
+    position: absolute;
+    inset: -35%;
+    z-index: -1;
+    opacity: 0;
+    background: radial-gradient(circle at center, rgba(0, 240, 255, 0.4) 0%, transparent 70%);
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+  }
+  .glass-glow:hover::after,
+  .group:hover .glass-glow::after {
+    opacity: 1;
   }
 
   /* Gradient text */
@@ -102,6 +146,10 @@
 
   .btn-liquid-purple {
     @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white bg-gradient-to-r from-purple-600 to-indigo-600 shadow-glow-purple hover:shadow-[0_0_35px_rgba(157,78,221,0.6)] active:scale-[0.98] transition-all duration-300 font-semibold;
+  }
+
+  .btn-liquid-danger {
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white bg-gradient-to-r from-red-500 to-rose-600 shadow-[0_0_25px_-5px_rgba(244,63,94,0.6)] hover:shadow-[0_0_35px_rgba(244,63,94,0.55)] active:scale-[0.98] transition-all duration-300 font-semibold;
   }
 }
 
@@ -131,6 +179,32 @@
   background: radial-gradient(circle, rgba(0, 113, 227, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
   filter: blur(90px);
   pointer-events: none;
+}
+
+@keyframes dockIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 24px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+.animate-dock-in {
+  animation: dockIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+}
+.animate-speaking {
+  animation: ringPulse 1.8s ease-out infinite;
 }
 
 /* Accessibility: honor reduced-motion preferences */

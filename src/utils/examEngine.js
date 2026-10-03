@@ -2,7 +2,7 @@
  * Deterministic scoring engine for the placement test.
  * Pure functions only — no React, no side effects.
  */
-import { QUESTIONS } from './questions';
+import { QUESTIONS } from './examQuestions';
 
 const MAX_POINTS = QUESTIONS.reduce(
   (total, q) => total + Math.max(...q.options.map((o) => o.points)),

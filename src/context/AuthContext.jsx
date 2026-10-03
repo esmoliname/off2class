@@ -1,9 +1,9 @@
+import React, { createContext, useCallback, useMemo, useState } from 'react';
+
 /**
  * Session persistence for the simulated auth (prototype scope).
  * Keeps the funnel alive across refreshes: leads and login survive reloads.
  */
-import { useState, useCallback } from 'react';
-
 const STORAGE_KEY = 'verneval.session';
 
 function readSession() {
@@ -24,8 +24,10 @@ function writeSession(user) {
   }
 }
 
-export function useSession() {
-  // Hydrate from storage first; the stored session (not a hardcoded flag) decides auth.
+export const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
+  // Hydrate from storage first; the stored session decides auth.
   const [user, setUser] = useState(() => readSession());
 
   const login = useCallback((userData) => {
@@ -38,10 +40,15 @@ export function useSession() {
     writeSession(null);
   }, []);
 
-  return {
-    user,
-    isAuthenticated: user !== null,
-    login,
-    logout,
-  };
+  const value = useMemo(
+    () => ({
+      user,
+      isAuthenticated: user !== null,
+      login,
+      logout,
+    }),
+    [user, login, logout]
+  );
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

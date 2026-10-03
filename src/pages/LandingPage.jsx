@@ -1,34 +1,49 @@
 import React from 'react';
-import Hero from '../components/Hero';
-import CourseCatalog from '../components/CourseCatalog';
+import { ArrowRight, Calendar, Layers, Cpu } from 'lucide-react';
+import Hero from '../components/sections/Hero';
+import CourseCatalog, { CatalogSectionHeader } from '../components/catalog/CourseCatalog';
 import BridgeCTA from '../components/shared/BridgeCTA';
-import { ArrowRight, Calendar, Sparkles, CheckCircle, ShieldCheck, Cpu, Globe2, MessageSquare } from 'lucide-react';
+import { Button } from '../components/ui';
+import { VIEWS } from '../utils/constants';
 
 export default function LandingPage({
   onOpenCalendly,
   onOpenAuth,
   onStartPlacementTest,
-  onSelectCourse
+  onSelectCourse,
+  onNavigate,
 }) {
   return (
     <main className="min-h-screen">
-      {/* 1. Hero Section */}
+      {/* 1. Hero */}
       <Hero
         onOpenCalendly={onOpenCalendly}
         onStartPlacementTest={onStartPlacementTest}
-        onNavigateToCourses={() => {
-          document.getElementById('cursos')?.scrollIntoView({ behavior: 'smooth' });
-        }}
+        onNavigateToCourses={() => onNavigate(VIEWS.CATALOG)}
       />
 
       {/* 2. Course Catalog */}
-      <CourseCatalog
-        onSelectCourse={onSelectCourse}
-        onOpenCalendly={onOpenCalendly}
-        onStartPlacementTest={onStartPlacementTest}
-      />
+      <section id="cursos" className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <CatalogSectionHeader />
 
-      {/* 3. Methodology & Innovation Section */}
+          <CourseCatalog
+            variant="landing"
+            onSelectCourse={onSelectCourse}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+          />
+
+          <div className="mt-10 text-center">
+            <Button variant="glass" size="md" onClick={() => onNavigate(VIEWS.CATALOG)}>
+              <Layers className="w-4 h-4 text-brand-cyan" />
+              <span>Ver Catálogo Completo de Preparación</span>
+              <ArrowRight className="w-4 h-4" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Methodology & Innovation */}
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="liquid-glass rounded-3xl p-8 sm:p-12 border-white/10 specular-border relative overflow-hidden">
@@ -42,48 +57,34 @@ export default function LandingPage({
                   <span>Arquitectura Pedagógica Dual</span>
                 </div>
                 <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-                  El poder de <span className="gradient-text-cyan">Off2Class</span> potenciado con Inteligencia Artificial
+                  El poder de <span className="gradient-text-cyan">Off2Class</span> potenciado con
+                  Inteligencia Artificial
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                  Combinamos la biblioteca didáctica más respetada a nivel universitario con un motor de diagnóstico adaptativo. Detectamos las debilidades exactas de cada alumno para que cada hora de estudio cuente el doble.
+                  Combinamos la biblioteca didáctica más respetada a nivel universitario con un
+                  motor de diagnóstico adaptativo. Detectamos las debilidades exactas de cada
+                  alumno para que cada hora de estudio cuente el doble.
                 </p>
 
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-lg bg-brand-cyan/20 border border-brand-cyan/40 flex items-center justify-center shrink-0 mt-0.5 text-brand-cyan font-bold text-xs">
-                      1
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-white">Aula Virtual Whitelabel sin intermediarios</h4>
-                      <p className="text-xs text-slate-300 mt-0.5">
-                        Acceso con Single Sign-On directo a las lecciones interactivas, tareas y material oficial de Off2Class.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-lg bg-purple-500/20 border border-purple-500/40 flex items-center justify-center shrink-0 mt-0.5 text-purple-400 font-bold text-xs">
-                      2
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-white">Recomendador Inteligente de Lecciones</h4>
-                      <p className="text-xs text-slate-300 mt-0.5">
-                        Algoritmos que analizan tu desempeño en tiempo real y sugieren los ejercicios específicos para desbloquear tu siguiente nivel CEFR.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center shrink-0 mt-0.5 text-emerald-400 font-bold text-xs">
-                      3
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-white">Comunidad Activa Verneval</h4>
-                      <p className="text-xs text-slate-300 mt-0.5">
-                        Canales colaborativos de speaking, debate académico y resolución de dudas con profesores en vivo.
-                      </p>
-                    </div>
-                  </div>
+                  <Step
+                    n={1}
+                    tone="cyan"
+                    title="Aula Virtual Whitelabel sin intermediarios"
+                    desc="Acceso con Single Sign-On directo a las lecciones interactivas, tareas y material oficial de Off2Class."
+                  />
+                  <Step
+                    n={2}
+                    tone="purple"
+                    title="Recomendador Inteligente de Lecciones"
+                    desc="Algoritmos que analizan tu desempeño en tiempo real y sugieren los ejercicios específicos para desbloquear tu siguiente nivel CEFR."
+                  />
+                  <Step
+                    n={3}
+                    tone="emerald"
+                    title="Comunidad Activa Verneval"
+                    desc="Canales colaborativos de speaking, debate académico y resolución de dudas con profesores en vivo."
+                  />
                 </div>
               </div>
 
@@ -95,7 +96,9 @@ export default function LandingPage({
                     <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                     <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                   </div>
-                  <span className="text-[11px] font-mono text-slate-300">campus.off2class.whitelabel/bridge</span>
+                  <span className="text-[11px] font-mono text-slate-300">
+                    campus.off2class.whitelabel/bridge
+                  </span>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 mb-4">
@@ -109,18 +112,9 @@ export default function LandingPage({
                 </div>
 
                 <div className="space-y-2 mb-5">
-                  <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 text-xs">
-                    <span className="text-slate-300">Speaking & Connected Speech</span>
-                    <span className="text-emerald-400 font-medium">B2 Avanzado</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 text-xs">
-                    <span className="text-slate-300">Listening Comprehension</span>
-                    <span className="text-brand-cyan font-medium">B2 Sólido</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 text-xs">
-                    <span className="text-slate-300">Past & Mixed Conditionals</span>
-                    <span className="text-amber-400 font-medium">En Refuerzo IA</span>
-                  </div>
+                  <PreviewRow label="Speaking & Connected Speech" value="B2 Avanzado" tone="emerald" />
+                  <PreviewRow label="Listening Comprehension" value="B2 Sólido" tone="cyan" />
+                  <PreviewRow label="Past & Mixed Conditionals" value="En Refuerzo IA" tone="amber" />
                 </div>
 
                 <BridgeCTA variant="inline" source="landing_methodology" />
@@ -130,7 +124,7 @@ export default function LandingPage({
         </div>
       </section>
 
-      {/* 4. Final CTA Section */}
+      {/* 4. Final CTA */}
       <section className="py-20 text-center relative">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="liquid-glass rounded-3xl p-8 sm:p-14 border-white/15 specular-border">
@@ -138,28 +132,58 @@ export default function LandingPage({
               ¿Listo para certificar tu nivel de inglés?
             </h3>
             <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto mb-8">
-              Tomá la prueba diagnóstica gratuita o agendá una llamada con nuestro equipo pedagógico para diseñar tu ruta académica.
+              Tomá la prueba diagnóstica gratuita o agendá una llamada con nuestro equipo
+              pedagógico para diseñar tu ruta académica.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={onStartPlacementTest}
-                className="btn-liquid-primary !py-3.5 !px-8 text-sm w-full sm:w-auto"
-              >
+              <Button variant="primary" size="lg" onClick={onStartPlacementTest}>
                 <span>Hacer Test Diagnóstico Ahora</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
-              <button
-                onClick={onOpenCalendly}
-                className="btn-liquid-secondary !py-3.5 !px-8 text-sm w-full sm:w-auto"
-              >
+              </Button>
+              <Button variant="secondary" size="lg" onClick={onOpenCalendly}>
                 <Calendar className="w-4 h-4 text-brand-cyan" />
                 <span>Agendar Asesoría (Calendly)</span>
-              </button>
+              </Button>
             </div>
           </div>
         </div>
       </section>
     </main>
+  );
+}
+
+function Step({ n, tone, title, desc }) {
+  const tones = {
+    cyan: 'bg-brand-cyan/20 border-brand-cyan/40 text-brand-cyan',
+    purple: 'bg-purple-500/20 border-purple-500/40 text-purple-400',
+    emerald: 'bg-emerald-500/20 border-emerald-500/40 text-emerald-400',
+  };
+  return (
+    <div className="flex items-start gap-3">
+      <div
+        className={`w-6 h-6 rounded-lg border flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs ${tones[tone]}`}
+      >
+        {n}
+      </div>
+      <div>
+        <h4 className="text-sm font-semibold text-white">{title}</h4>
+        <p className="text-xs text-slate-300 mt-0.5">{desc}</p>
+      </div>
+    </div>
+  );
+}
+
+function PreviewRow({ label, value, tone }) {
+  const tones = {
+    emerald: 'text-emerald-400',
+    cyan: 'text-brand-cyan',
+    amber: 'text-amber-400',
+  };
+  return (
+    <div className="flex items-center justify-between p-3 rounded-xl bg-white/[0.02] border border-white/5 text-xs">
+      <span className="text-slate-300">{label}</span>
+      <span className={`font-medium ${tones[tone]}`}>{value}</span>
+    </div>
   );
 }

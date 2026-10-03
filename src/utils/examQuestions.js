@@ -8,6 +8,7 @@ export const QUESTIONS = [
     id: 'q1',
     skillKey: 'grammar',
     skillLabel: 'Gramática Aplicada',
+    skillTone: 'cyan',
     resultSkill: 'Grammar & Syntax',
     prompt:
       '"If the university board _______ earlier, we would have adjusted our academic syllabus."',
@@ -22,6 +23,7 @@ export const QUESTIONS = [
     id: 'q2',
     skillKey: 'vocabulary',
     skillLabel: 'Vocabulario y Registro Formal',
+    skillTone: 'purple',
     resultSkill: 'Reading & Vocabulary',
     prompt:
       'Which term best fits a high-level academic paper: "The research findings strongly _______ the initial hypothesis."',
@@ -36,6 +38,7 @@ export const QUESTIONS = [
     id: 'q3',
     skillKey: 'listening',
     skillLabel: 'Listening & Inference',
+    skillTone: 'emerald',
     resultSkill: 'Listening Comprehension',
     prompt:
       'Speaker A: "I thought the lecture was rather convoluted." — What does Speaker A mean?',
@@ -46,4 +49,13 @@ export const QUESTIONS = [
       { id: 'q3d', text: 'The speaker disagreed with the conclusions.', points: 1 },
     ],
   },
+];
+
+/** Skill badges advertised in the portal header */
+export const EXAM_SKILLS = [
+  { key: 'grammar', label: 'Grammar', tone: 'cyan' },
+  { key: 'vocabulary', label: 'Vocabulary', tone: 'purple' },
+  { key: 'reading', label: 'Reading', tone: 'blue' },
+  { key: 'listening', label: 'Listening', tone: 'emerald' },
+  { key: 'speaking', label: 'Speaking', tone: 'amber' },
 ];

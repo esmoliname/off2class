@@ -16,14 +16,16 @@ import {
   Globe,
   Mic,
   HelpCircle,
-  Info
+  Info,
+  Radio
 } from 'lucide-react';
 import BridgeCTA, { openBridge } from '../components/shared/BridgeCTA';
+import { VIEWS } from '../utils/constants';
 import {
   AI_RECOMMENDATIONS,
   VERNEVAL_CHANNELS,
   INITIAL_VERNEVAL_MESSAGES
-} from '../utils/constants';
+} from '../utils/mocks';
 
 const channelIconMap = {
   Globe: Globe,
@@ -32,7 +34,7 @@ const channelIconMap = {
   BookOpen: BookOpen,
 };
 
-export default function StudentDashboard({ student, onOpenCalendly }) {
+export default function StudentDashboard({ student, onOpenCalendly, onNavigate }) {
   const [activeChannel, setActiveChannel] = useState('general');
   const [messages, setMessages] = useState(INITIAL_VERNEVAL_MESSAGES);
   const [newMessage, setNewMessage] = useState('');
@@ -169,6 +171,14 @@ export default function StudentDashboard({ student, onOpenCalendly }) {
             >
               <Clock className="w-3.5 h-3.5 text-brand-cyan" />
               <span>Pedir Tutoría 1:1</span>
+            </button>
+
+            <button
+              onClick={() => onNavigate?.(VIEWS.CLASSROOM)}
+              className="btn-liquid-secondary !py-2.5 !px-4 text-xs border-emerald-500/40 hover:border-emerald-400/70 hover:bg-emerald-500/10"
+            >
+              <Radio className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Entrar a la Clase en Vivo</span>
             </button>
           </div>
         </div>
