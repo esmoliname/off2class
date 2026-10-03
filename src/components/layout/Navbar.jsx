@@ -34,7 +34,7 @@ export default function Navbar({
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-bold tracking-tight text-white text-lg">Off2Class</span>
+              <span className="font-bold tracking-tight text-white text-lg">Globaltest English</span>
               <span className="text-[10px] font-semibold uppercase tracking-widest px-1.5 py-0.5 rounded bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30">
                 PRO
               </span>

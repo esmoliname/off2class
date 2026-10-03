@@ -44,7 +44,7 @@ export default function CalendlyModal({ isOpen, onClose }) {
               Duración: <span className="text-white font-medium">20 minutos</span>
             </div>
             <div className="text-slate-400">
-              Mentor: <span className="text-white font-medium">Coordinador Académico Off2Class</span>
+              Mentor: <span className="text-white font-medium">Coordinador Académico Globaltest English</span>
             </div>
           </div>
           <Button onClick={handleReset} variant="primary" size="md">

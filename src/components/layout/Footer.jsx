@@ -21,12 +21,12 @@ export default function Footer({ onOpenCalendly, onNavigate }) {
                 </div>
               </div>
               <span className="font-bold text-white text-base tracking-tight">
-                Off2Class University
+                Globaltest English
               </span>
             </div>
             <p className="text-xs text-slate-300 leading-relaxed mb-4">
               Entorno pedagógico de alta exigencia para estudiantes universitarios y
-              profesionales. Plataforma oficial de marca blanca Off2Class integrada con IA.
+              profesionales. Plataforma de inglés universitario con IA, potenciada por Off2Class Whitelabel.
             </p>
             <div className="flex items-center gap-2 text-[11px] text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full w-fit border border-emerald-500/20">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -105,7 +105,7 @@ export default function Footer({ onOpenCalendly, onNavigate }) {
         {/* Bottom bar */}
         <div className="border-t border-white/[0.06] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex items-center gap-1.5">
-            <span>© {new Date().getFullYear()} Off2Class University Suite. Todos los derechos reservados.</span>
+            <span>© {new Date().getFullYear()} Globaltest English. Todos los derechos reservados.</span>
             <Heart className="w-3 h-3 text-rose-400" />
           </div>
           <div className="flex items-center gap-6">

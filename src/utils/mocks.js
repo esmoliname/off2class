@@ -75,7 +75,7 @@ export const INITIAL_VERNEVAL_MESSAGES = [
     id: 'msg-1',
     channel: 'general',
     sender: 'Prof. David Miller',
-    role: 'Lead Mentor (Off2Class)',
+    role: 'Lead Mentor (Globaltest English)',
     avatar:
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
     content:
@@ -119,7 +119,7 @@ export const CLASSROOM_LESSON = {
   level: 'B2.1',
   teacher: {
     name: 'Prof. David Miller',
-    role: 'Lead Mentor · Off2Class',
+    role: 'Lead Mentor · Globaltest English',
     avatar:
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
     speaking: true,

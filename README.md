@@ -1,6 +1,6 @@
-# Off2Class University Suite | Prototipo Liquid Glass & Whitelabel Bridge
+# Globaltest English | Prototipo Liquid Glass & Whitelabel Bridge (Off2Class)
 
-Prototipo web funcional de alta fidelidad construido con **React (Vite)** y **Tailwind CSS**, inspirado en el lenguaje visual de **Apple Ecosystem (VisionOS / macOS Sonoma / Liquid Glass)**.
+Prototipo web funcional de alta fidelidad de la plataforma **Globaltest English**, construido con **React (Vite)** y **Tailwind CSS**, inspirado en el lenguaje visual de **Apple Ecosystem (VisionOS / macOS Sonoma / Liquid Glass)**.
 
 Integra una Landing Page comercial de conversión académica, un Catálogo de preparación de exámenes, un Portal de Placement Test, una Sala de Clase en vivo y un Dashboard de estudiante con IA diagnóstica, más el puente de redirección directo a **Off2Class Whitelabel** y el módulo comunitario **Verneval**.
 
@@ -110,4 +110,4 @@ export const CALENDLY_BOOKING_URL = "https://calendly.com";         // Modificar
 ---
 
 ## 🔒 Licencia y Créditos
-Desarrollado para el ecosistema educativo de **Off2Class**. Prototipo con arquitectura limpia y componentes reutilizables.
+Prototipo de **Globaltest English** construido sobre el ecosistema educativo **Off2Class**. Arquitectura limpia y componentes reutilizables.

@@ -14,9 +14,9 @@ export default function Hero({ onOpenCalendly, onStartPlacementTest, onNavigateT
           {/* Top Pill / Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass border-white/15 text-xs text-slate-300 mb-8 animate-float-slow specular-border">
             <span className="flex h-2 w-2 rounded-full bg-brand-cyan animate-ping" />
-            <span className="font-semibold text-brand-cyan">Off2Class Powered</span>
+            <span className="font-semibold text-brand-cyan">Globaltest English</span>
             <span className="text-slate-500">•</span>
-            <span className="text-slate-300">Plataforma Universitaria & Whitelabel</span>
+            <span className="text-slate-300">Plataforma Universitaria · Powered by Off2Class</span>
             <Sparkles className="w-3.5 h-3.5 text-brand-cyan ml-0.5" />
           </div>
 

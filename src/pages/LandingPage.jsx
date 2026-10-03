@@ -57,7 +57,7 @@ export default function LandingPage({
                   <span>Arquitectura Pedagógica Dual</span>
                 </div>
                 <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-                  El poder de <span className="gradient-text-cyan">Off2Class</span> potenciado con
+                  El poder de <span className="gradient-text-cyan">Globaltest English</span> potenciado con
                   Inteligencia Artificial
                 </h3>
                 <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
